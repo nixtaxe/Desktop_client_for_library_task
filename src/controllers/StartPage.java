@@ -9,6 +9,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -36,7 +38,7 @@ public class StartPage {
 
     @FXML
     private void signUp(ActionEvent event) {
-        signUpButton.getScene().getWindow().hide();
+        Stage stage = (Stage) signUpButton.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("/gui/SignUpPage.fxml"));
         try {
@@ -45,10 +47,8 @@ public class StartPage {
         catch (IOException e) {
             e.printStackTrace();
         }
-        Parent root = loader.getRoot();
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root));
-        stage.setTitle("Library");
-        stage.show();
+        AnchorPane root = (AnchorPane) loader.getRoot();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
     }
 }

@@ -4,6 +4,8 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -19,11 +21,11 @@ public class ClientApplication extends Application{
         catch (IOException e) {
             e.printStackTrace();
         }
-        Parent root = loader.getRoot();
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root));
-        stage.setTitle("Library");
-        stage.show();
+        AnchorPane root = (AnchorPane) loader.getRoot();
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+        //TODO вынести функцию загрузки в класс главного контроллера
     }
 
     public static void main(String[] args) {

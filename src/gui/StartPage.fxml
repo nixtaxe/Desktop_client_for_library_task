@@ -53,9 +53,9 @@
             </HBox>
          </children>
       </VBox>
-      <Label alignment="CENTER" layoutX="78.0" layoutY="39.0" text="Welcome to library!" textAlignment="CENTER" textFill="WHITE">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="48.0" layoutY="39.0" text="Welcome to library!" textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
-            <Font name="Pristina" size="69.0" />
+            <Font size="51.0" />
          </font>
       </Label>
       <FlowPane layoutX="14.0" layoutY="164.0" prefHeight="200.0" prefWidth="200.0" />

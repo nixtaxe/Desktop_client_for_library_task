@@ -1,16 +1,17 @@
 package controllers;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -44,11 +45,11 @@ public class SignUpPage {
         catch (IOException e) {
             e.printStackTrace();
         }
-        Parent root = loader.getRoot();
-        Stage stage = new Stage();
-        stage.setScene(new Scene(root));
-        stage.setTitle("Library");
-        stage.show();
+
+        Stage stage = (Stage) cancelButton.getScene().getWindow();
+        AnchorPane root = (AnchorPane) loader.getRoot();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
     }
 
     @FXML
