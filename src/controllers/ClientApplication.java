@@ -24,6 +24,7 @@ public class ClientApplication extends Application{
         AnchorPane root = (AnchorPane) loader.getRoot();
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
+        primaryStage.setTitle("Library");
         primaryStage.show();
         //TODO вынести функцию загрузки в класс главного контроллера
     }

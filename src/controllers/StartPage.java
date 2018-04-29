@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -17,38 +18,27 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-
+/**
+ * @author zabortseva
+ */
 public class StartPage {
-    @FXML
-    private TextField loginField;
-
-    @FXML
-    private PasswordField passwordField;
-
-    @FXML
-    private Button signInButton;
-
-    @FXML
-    private Button signUpButton;
-
+    /**
+     * Функция авторизации
+     * @param event
+     */
     @FXML
     private void signIn(ActionEvent event) {
         //TODO: create a query and send it to server
     }
 
+    /**
+     * Функция перехода к регистрационной форме
+     * @param event
+     * {@link SignUpPage#signUp(ActionEvent)}
+     */
     @FXML
     private void signUp(ActionEvent event) {
-        Stage stage = (Stage) signUpButton.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/gui/SignUpPage.fxml"));
-        try {
-            loader.load();
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-        AnchorPane root = (AnchorPane) loader.getRoot();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
+        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        StageManager.setStage(stage, "/gui/SignUpPage.fxml");
     }
 }

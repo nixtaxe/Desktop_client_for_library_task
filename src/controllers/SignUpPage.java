@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -16,40 +17,17 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * Add this to javadoc pls
+ */
+
+//TODO: create parent controller
+
 public class SignUpPage {
     @FXML
-    private TextField loginField;
-
-    @FXML
-    private PasswordField passwordField;
-
-    @FXML
-    private TextField nameField;
-
-    @FXML
-    private TextField contactInfoField;
-
-    @FXML
-    private Button cancelButton;
-
-    @FXML
-    private Button signUpButton;
-
-    @FXML
     private void loadStartPage(ActionEvent event) {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/gui/StartPage.fxml"));
-        try {
-            loader.load();
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        Stage stage = (Stage) cancelButton.getScene().getWindow();
-        AnchorPane root = (AnchorPane) loader.getRoot();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
+        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        StageManager.setStage(stage, "/gui/StartPage.fxml");
     }
 
     @FXML
