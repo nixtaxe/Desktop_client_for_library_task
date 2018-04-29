@@ -1,13 +1,11 @@
 package controllers;
 
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import javax.swing.*;
-import java.io.IOException;
 
 public class StageManager {
     public static void setStage(Stage stage, String fxml) {
@@ -16,8 +14,11 @@ public class StageManager {
             Scene scene = new Scene(root);
             stage.setScene(scene);
         }
-        catch (IOException e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
+        catch (Exception e) {
+            JOptionPane.showMessageDialog(null,
+                    e.getMessage(),
+                    "An exception occured",
+                    JOptionPane.ERROR_MESSAGE);
         }
     }
 }

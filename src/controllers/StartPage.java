@@ -21,7 +21,7 @@ import java.util.ResourceBundle;
 /**
  * @author zabortseva
  */
-public class StartPage {
+public class StartPage extends CommonController {
     /**
      * Функция авторизации
      * @param event
@@ -29,16 +29,5 @@ public class StartPage {
     @FXML
     private void signIn(ActionEvent event) {
         //TODO: create a query and send it to server
-    }
-
-    /**
-     * Функция перехода к регистрационной форме
-     * @param event
-     * {@link SignUpPage#signUp(ActionEvent)}
-     */
-    @FXML
-    private void signUp(ActionEvent event) {
-        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        StageManager.setStage(stage, "/gui/SignUpPage.fxml");
     }
 }

@@ -33,7 +33,7 @@
             </TextField>
             <HBox spacing="65.0">
                <children>
-                  <Button fx:id="signUpButton" mnemonicParsing="false" onAction="#signUp" text="Sign up">
+                  <Button fx:id="signUpButton" mnemonicParsing="false" onAction="#loadSignUpPage" text="Sign up">
                      <font>
                         <Font name="Pristina" size="20.0" />
                      </font>
